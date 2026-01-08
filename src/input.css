@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.slide-left,
+.slide-right,
+.slide-up,
+.slide-down {
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+.slide-left {
+  animation-name: slide-left;
+}
+
+.slide-right {
+  animation-name: slide-right;
+}
+
+.slide-up {
+  animation-name: slide-up;
+}
+
+.slide-down {
+  animation-name: slide-down;
+}
+
+.scroll-mode div,
+footer {
+  animation-name: scrollmode;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-timeline: view();
+
+  animation-range: entry 0;
+  transform-origin: center;
+}
+
+@keyframes scrollmode {
+  from {
+    scale: 0.8;
+    opacity: 0.8;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
