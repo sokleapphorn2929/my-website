@@ -15,6 +15,7 @@
     --color-purple-600: oklch(55.8% 0.288 302.321);
     --color-purple-700: oklch(49.6% 0.265 301.924);
     --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
@@ -27,6 +28,7 @@
     --container-sm: 24rem;
     --container-md: 28rem;
     --container-lg: 32rem;
+    --container-xl: 36rem;
     --container-2xl: 42rem;
     --container-5xl: 64rem;
     --container-7xl: 80rem;
@@ -499,6 +501,9 @@
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
   }
@@ -952,6 +957,11 @@
       width: var(--container-lg);
     }
   }
+  .md\:w-xl {
+    @media (width >= 48rem) {
+      width: var(--container-xl);
+    }
+  }
   .md\:w-xs {
     @media (width >= 48rem) {
       width: var(--container-xs);
@@ -1020,28 +1030,10 @@ html {
 .slide-down {
   animation-name: slide-down;
 }
-.scroll-mode div, footer {
-  animation-name: scrollmode;
-  animation-timing-function: linear;
-  animation-duration: 5s;
-  animation-timeline: view();
-  animation-range: entry 0;
-  transform-origin: center;
-}
-@keyframes scrollmode {
-  from {
-    scale: 0.8;
-    opacity: 0.8;
-  }
-  to {
-    scale: 1;
-    opacity: 1;
-  }
-}
 @keyframes slide-left {
   from {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-50px);
   }
   to {
     opacity: 1;
@@ -1051,7 +1043,7 @@ html {
 @keyframes slide-right {
   from {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(50px);
   }
   to {
     opacity: 1;

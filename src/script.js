@@ -61,7 +61,7 @@ function darkMode() {
 }
 
 function dark() {
-  bg.classList.remove("bg-gray-50");
+  bg.classList.remove("bg-gray-100");
   bg.classList.add("bg-gray-950");
   abtimg.classList.remove("shadow-black/50");
   abtimg.classList.add("shadow-purple-600");
@@ -89,7 +89,7 @@ function dark() {
 
 function light() {
   bg.classList.remove("bg-gray-950");
-  bg.classList.add("bg-gray-50");
+  bg.classList.add("bg-gray-100");
 
   abtimg.classList.remove("shadow-purple-600");
   abtimg.classList.add("shadow-black/50");
