@@ -12,7 +12,7 @@
 
     <link href="/src/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="./input.css" />
-    
+
     <script>
       tailwind.config = {
         darkMode: "class",
@@ -113,8 +113,8 @@
           >
             Hi, I'm
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-blue-600 dark:to-cyan-400"
-              >Phorn Sokleap</span
+              class="text-brand-600"
+              >Phorn Sokleap.</span
             >
           </h1>
           <p class="text-lg text-slate-600 dark:text-slate-300 font-medium">
@@ -336,7 +336,7 @@
         </p>
       </div>
 
-      <div
+      <!-- <div
         class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 grid grid-cols-1 md:grid-cols-12"
       >
         <div
@@ -378,6 +378,126 @@
                 class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400"
                 >Postman</span
               >
+            </div>
+
+            <div
+              class="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400"
+            >
+              <span
+                ><i class="fa-regular fa-calendar mr-1.5 text-brand-500"></i>
+                Completed Apr 2026</span
+              >
+              <span
+                ><i class="fa-solid fa-gears mr-1.5 text-brand-500"></i>
+                Back-End Architecture</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-slate-950 p-8 md:col-span-5 flex flex-col justify-center font-mono text-xs text-slate-400 border-t md:border-t-0 md:border-l border-slate-200 dark:border-slate-800"
+        >
+          <div class="space-y-2 select-none">
+            <p class="text-emerald-400">// API Middleware Security Layer</p>
+            <p>
+              <span class="text-purple-400">Route::</span>prefix(<span
+                class="text-amber-300"
+                >'v1'</span
+              >)->group(function () {
+            </p>
+            <p class="pl-4">
+              <span class="text-purple-400">Route::</span>apiResource(<span
+                class="text-amber-300"
+                >'courses'</span
+              >, CourseController::class);
+            </p>
+            <p class="pl-4">
+              <span class="text-purple-400">Route::</span>post(<span
+                class="text-amber-300"
+                >'students/enroll'</span
+              >, [EnrollController::class,
+              <span class="text-amber-300">'store'</span>]);
+            </p>
+            <p>});</p>
+            <br />
+            <p class="text-slate-500">HTTP/1.1 201 Created</p>
+            <p class="text-slate-50">{</p>
+            <p class="pl-4">
+              <span class="text-blue-400">"status"</span>:
+              <span class="text-amber-300">"success"</span>,
+            </p>
+            <p class="pl-4">
+              <span class="text-blue-400">"payload"</span>: {
+              <span class="text-slate-600">"id"</span>: 2929 }
+            </p>
+            <p class="text-slate-50">}</p>
+          </div>
+        </div>
+      </div> -->
+      <div
+        class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 grid grid-cols-1 md:grid-cols-12"
+      >
+        <div
+          class="p-8 md:p-10 md:col-span-7 flex flex-col justify-between space-y-6"
+        >
+          <div class="space-y-3">
+            <span
+              class="text-xs font-bold text-brand-500 tracking-widest uppercase"
+              >Pure Backend REST API</span
+            >
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">
+              Student Course Registration System
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm"
+            >
+              Engineered a lightweight, pure backend system capable of handling
+              complex school processes seamlessly. Built to operate
+              independently from the frontend, ensuring database security and
+              handling dynamic workloads with precise execution.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400"
+                >Laravel</span
+              >
+              <span
+                class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400"
+                >MongoDB</span
+              >
+              <span
+                class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400"
+                >Cloudinary</span
+              >
+              <span
+                class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400"
+                >Postman</span
+              >
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://student-course-register-system.onrender.com/api/public/student"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 text-white text-xs font-semibold rounded-xl shadow-sm shadow-brand-500/10 hover:shadow transition-all duration-200 transform hover:-translate-y-0.5"
+              >
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-[10px]"
+                ></i>
+                Live API Documentation
+              </a>
+              <a
+                href="https://github.com/sokleapphorn2929/student-course-register-system"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 transition-all duration-200 transform hover:-translate-y-0.5"
+              >
+                <i class="fa-brands fa-github text-sm"></i>
+                View Source Code
+              </a>
             </div>
 
             <div
