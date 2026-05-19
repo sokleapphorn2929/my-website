@@ -1,548 +1,643 @@
 <!doctype html>
-<html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sokleap | Portfolio</title>
-    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+    <title>Phorn Sokleap | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <link href="/src/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="./input.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css"
-    />
+    
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#f0f7ff",
+                100: "#e0effe",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+                900: "#1e3a8a",
+              },
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body class="font-sans text-md bg-gray-100">
-    <!-- header -->
-    <header class="flex justify-center">
-      <nav
-        class="w-full md:w-auto h-auto rounded-none md:rounded-full flex flex-wrap justify-center items-center p-3 fixed md:top-10 top-0 z-50 backdrop-blur-xs outline-1 outline-white duration-500 ease-in-out bg-white/50 shadow-md shadow-black/20 slide-down"
-      >
-        <ul class="flex flex-wrap md:gap-5 gap-2.5 justify-center">
-          <li>
-            <a
-              href="#home"
-              class="nav-link z-10 text-black font-bold box w-auto p-1.5 rounded-full duration-300 ease-in-out hover:text-amber-300"
-              >Home</a
+  <body
+    class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300"
+  >
+    <nav
+      class="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300"
+    >
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <span
+            class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+          >
+            SOKLEAP<span class="text-brand-500">.</span>
+          </span>
+
+          <div class="flex items-center space-x-6 md:space-x-8">
+            <div
+              class="hidden sm:flex space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300"
             >
-          </li>
-          <li>
-            <a
-              href="#about"
-              class="nav-link z-10 text-black font-bold box w-auto p-1.5 rounded-full duration-300 ease-in-out hover:text-amber-300"
-              >About</a
+              <a
+                href="#about"
+                class="hover:text-brand-500 dark:hover:text-brand-500 transition"
+                >About</a
+              >
+              <a
+                href="#skills"
+                class="hover:text-brand-500 dark:hover:text-brand-500 transition"
+                >Skills</a
+              >
+              <a
+                href="#projects"
+                class="hover:text-brand-500 dark:hover:text-brand-500 transition"
+                >Projects</a
+              >
+              <a
+                href="#experience"
+                class="hover:text-brand-500 dark:hover:text-brand-500 transition"
+                >Experience</a
+              >
+            </div>
+
+            <button
+              id="theme-toggle"
+              class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:ring-2 hover:ring-slate-200 dark:hover:ring-slate-800 transition-all"
+              aria-label="Toggle Theme"
             >
-          </li>
-          <li>
-            <a
-              href="#project"
-              class="nav-link z-10 text-black font-bold box w-auto p-1.5 rounded-full duration-300 ease-in-out hover:text-amber-300"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a
-              href="#skills"
-              class="nav-link z-10 text-black font-bold box w-auto p-1.5 rounded-full duration-300 ease-in-out hover:text-amber-300"
-              >Skills</a
-            >
-          </li>
-          <li>
-            <a
-              href="#exp"
-              class="nav-link z-10 text-black font-bold box w-auto p-1.5 rounded-full duration-300 ease-in-out hover:text-amber-300"
-              >Experience</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contact"
-              class="nav-link z-10 text-black font-bold box w-auto p-1.5 rounded-full duration-300 ease-in-out hover:text-amber-300"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!-- main -->
-    <main class="flex flex-col items-center overflow-hidden">
-      <div class="fixed right-10 bottom-10 z-50">
-        <button
-          class="modebtn bg-black text-white p-2.5 rounded-full outline-1 outline-purple-600 drop-shadow-lg drop-shadow-purple-500"
-          onclick="darkMode()"
-        >
-          <i class="fi fi-sr-light-mode-alt text-2xl"></i>
-        </button>
+              <i
+                id="theme-toggle-light-icon"
+                class="hidden fa-solid fa-sun text-amber-500 text-sm"
+              ></i>
+              <i
+                id="theme-toggle-dark-icon"
+                class="hidden fa-solid fa-moon text-sm"
+              ></i>
+            </button>
+          </div>
+        </div>
       </div>
-      <!-- home -->
-      <section id="home">
-        <div class="img flex justify-center mt-36 slide-left">
-          <img
-            src="/img/download (2).jpg"
-            alt="avatar"
-            class="md:w-52 w-40 aspect-3/4 object-cover rounded-3xl shadow-lg shadow-purple-600 duration-500 ease-in-out"
-          />
-        </div>
-        <div class="text-center md:w-lg w-80 mt-5 slide-right">
-          <h1 class="text-3xl mt-10">
-            Hello!
-            <span class="text-purple-700 font-semibold">I'm Sokleap.</span>
+    </nav>
+
+    <header
+      id="about"
+      class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 md:py-24"
+    >
+      <div
+        class="flex flex-col-reverse md:flex-row items-center justify-between gap-12"
+      >
+        <div class="flex-1 text-center md:text-left space-y-6">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 border border-brand-100 dark:border-brand-900/50"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
+            ></span>
+            Available for Backend Internships
+          </div>
+          <h1
+            class="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight"
+          >
+            Hi, I'm
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-blue-600 dark:to-cyan-400"
+              >Phorn Sokleap</span
+            >
           </h1>
-          <p class="mt-5">
-            A passionate Front-End Web Developer with a strong focus on creating
-            clean, modern, and responsive user interfaces.
+          <p class="text-lg text-slate-600 dark:text-slate-300 font-medium">
+            Year 3 Computer Science Student & Backend Developer
+          </p>
+          <p
+            class="text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl"
+          >
+            I specialize in building efficient, scalable backend logic with a
+            focus on <strong>Laravel</strong> and <strong>MongoDB</strong>. With
+            a unique dual background in <strong>Commercial Science</strong>, I
+            bring an analytical, business-driven mindset to engineering
+            challenges, seeking to write clean code that delivers tangible
+            technical efficiency.
+          </p>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-600 dark:text-slate-400 pt-2"
+          >
+            <div
+              class="flex items-center justify-center md:justify-start gap-2.5"
+            >
+              <i class="fa-solid fa-envelope text-brand-500 w-4"></i>
+              <a href="mailto:phsokleap2929@gmail.com" class="hover:underline"
+                >phsokleap2929@gmail.com</a
+              >
+            </div>
+            <div
+              class="flex items-center justify-center md:justify-start gap-2.5"
+            >
+              <i class="fa-solid fa-phone text-brand-500 w-4"></i>
+              <a href="tel:+855968410063" class="hover:underline"
+                >+855 96 84 10 063</a
+              >
+            </div>
+            <div
+              class="flex items-center justify-center md:justify-start gap-2.5"
+            >
+              <i class="fa-solid fa-location-dot text-brand-500 w-4"></i>
+              <span>Phnom Penh, Cambodia</span>
+            </div>
+            <div
+              class="flex items-center justify-center md:justify-start gap-2.5"
+            >
+              <i class="fa-solid fa-graduation-cap text-brand-500 w-4"></i>
+              <span>Royal University of Phnom Penh</span>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-wrap justify-center md:justify-start gap-4 pt-4"
+          >
+            <a
+              href="mailto:phsokleap2929@gmail.com"
+              class="px-6 py-3 bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 text-white font-medium rounded-xl shadow-md shadow-brand-500/10 hover:shadow-lg transition duration-200 flex items-center gap-2"
+            >
+              <i class="fa-solid fa-paper-plane text-sm"></i> Contact Me
+            </a>
+            <a
+              href="https://github.com/sokleapphorn2929"
+              target="_blank"
+              class="px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium rounded-xl border border-slate-200 dark:border-slate-800 transition duration-200 flex items-center gap-2"
+            >
+              <i class="fa-brands fa-github text-lg"></i> GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/sokleap-phorn"
+              target="_blank"
+              class="px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium rounded-xl border border-slate-200 dark:border-slate-800 transition duration-200 flex items-center gap-2"
+            >
+              <i class="fa-brands fa-linkedin text-lg"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="relative flex-shrink-0">
+          <div
+            class="w-48 h-56 sm:w-64 sm:h-80 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-800 transition duration-300"
+          >
+            <div
+              class="w-full h-full bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center text-white text-6xl font-bold tracking-wider"
+            >
+              <img src="./img/1711898372036.jpg" alt="" />
+            </div>
+          </div>
+          <div
+            class="absolute -bottom-3 -right-3 bg-white dark:bg-slate-900 shadow-xl rounded-2xl p-3.5 flex items-center gap-3 border border-slate-100 dark:border-slate-800/80 transition duration-300"
+          >
+            <div
+              class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950/50 flex items-center justify-center text-brand-500"
+            >
+              <i class="fa-solid fa-terminal text-sm"></i>
+            </div>
+            <div>
+              <p
+                class="text-[10px] text-slate-400 font-bold tracking-wider uppercase"
+              >
+                Focus
+              </p>
+              <p class="text-xs font-bold text-slate-800 dark:text-slate-200">
+                API Architecture
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section
+      id="skills"
+      class="bg-white dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/60 py-16 transition-colors duration-300"
+    >
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center md:text-left mb-10">
+          <h2
+            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl"
+          >
+            Technical Expertise
+          </h2>
+          <p class="text-slate-500 dark:text-slate-400 mt-2">
+            Tools, engines, and environments I work with daily.
           </p>
         </div>
-        <!-- logo -->
-        <div
-          class="w-full h-10 flex justify-center items-center gap-5 mt-5 slide-up"
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="p-6 bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-slate-200/60 dark:border-slate-800/40 group hover:border-brand-500/40 dark:hover:border-brand-500/40 transition duration-300"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center mb-4 shadow-md shadow-brand-500/20"
+            >
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white mb-3">
+              Core Frameworks & Tools
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
+                >Laravel</span
+              >
+              <span
+                class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
+                >Postman API</span
+              >
+              <span
+                class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
+                >Cloudinary</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="p-6 bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-slate-200/60 dark:border-slate-800/40 group hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition duration-300"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center mb-4 shadow-md shadow-emerald-500/20"
+            >
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white mb-3">
+              Databases
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
+                >MongoDB</span
+              >
+              <span
+                class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
+                >MySQL</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="p-6 bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-slate-200/60 dark:border-slate-800/40 group hover:border-amber-500/40 dark:hover:border-amber-500/40 transition duration-300"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center mb-4 shadow-md shadow-amber-500/20"
+            >
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white mb-3">
+              Languages
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
+                >PHP</span
+              >
+              <span
+                class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
+                >C / C++</span
+              >
+              <span
+                class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
+                >Java</span
+              >
+              <span
+                class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
+                >C#</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center md:text-left mb-10">
+        <h2
+          class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl"
         >
-          <div
-            class="size-10 bg-gray-600 rounded-full flex items-center justify-center hover:-translate-y-1.5 duration-500 ease-in-out hover:shadow-md hover:shadow-black"
-          >
-            <a
-              href="https://www.linkedin.com/in/sokleap-phorn/"
-              target="_blank"
+          Featured Project
+        </h2>
+        <p class="text-slate-500 dark:text-slate-400 mt-2">
+          Core system implementations built from scratch.
+        </p>
+      </div>
+
+      <div
+        class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 grid grid-cols-1 md:grid-cols-12"
+      >
+        <div
+          class="p-8 md:p-10 md:col-span-7 flex flex-col justify-between space-y-6"
+        >
+          <div class="space-y-3">
+            <span
+              class="text-xs font-bold text-brand-500 tracking-widest uppercase"
+              >Pure Backend REST API</span
             >
-              <svg
-                class="w-5 h-5 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v16H.22V8zM7.98 8h4.38v2.18h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.48 3.04 5.48 6.98V24h-4.56v-6.98c0-1.66-.04-3.8-2.32-3.8-2.32 0-2.68 1.8-2.68 3.68V24H7.98V8z"
-                />
-              </svg>
-            </a>
-          </div>
-          <div
-            class="size-10 bg-gray-600 rounded-full flex items-center justify-center hover:-translate-y-1.5 duration-500 ease-in-out hover:shadow-md hover:shadow-black"
-          >
-            <a
-              href="https://facebook.com/leeaaappboii/?_rdc=1&_rdr#"
-              target="_blank"
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">
+              Student Course Registration System
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm"
             >
-              <svg
-                class="w-5 h-5 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691V11.01h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"
-                />
-              </svg>
-            </a>
-          </div>
-          <div
-            class="size-10 bg-gray-600 rounded-full flex items-center justify-center hover:-translate-y-1.5 duration-500 ease-in-out hover:shadow-md hover:shadow-black"
-          >
-            <a href="https://github.com/sokleapphorn2929" target="_blank">
-              <svg
-                class="w-5 h-5 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.303-5.467-1.333-5.467-5.93 0-1.31.469-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.479 5.922.43.372.815 1.102.815 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-      <!-- About -->
-      <section id="about" class="scroll-mt-32">
-        <div class="br-line flex justify-center mt-14 mb-14">
-          <div
-            class="w-1 h-14 bg-gray-500 rounded-full opacity-50 backdrop-blur-lg"
-          ></div>
-        </div>
-        <div class="text-center mb-10">
-          <h2 class="text-3xl font-bold">About Me</h2>
-        </div>
-        <div class="pic flex justify-center mb-10">
-          <img
-            src="/img/image.png"
-            alt="sokleap picture"
-            class="abt-img aspect-3/4 object-cover md:w-xs w-64 duration-500 ease-in-out rounded-3xl shadow-lg shadow-black/50 slide-left"
-          />
-        </div>
-        <div class="md:w-lg w-sm text-center">
-          <p class="slide-right">
-            I am a Computer Science student at Royale University of Phnom Penh.
-            I specialize in front-end web development, with a strong interest in
-            building modern, responsive, and user-focused web interfaces.
-          </p>
-        </div>
-      </section>
-      <!-- Projects -->
-      <section id="project" class="">
-        <div class="text-center mb-10 mt-40">
-          <h2 class="text-3xl font-bold">My Projects</h2>
-        </div>
-        <div class="w-full h-full flex-wrap justify-center">
-          <div
-            class="md:w-2xl w-4/5 h-80 rounded-2xl flex items-center justify-center mx-auto mb-10 shadow-lg shadow-black/25 dark overflow-hidden"
-          >
-            <div class="w-[90%] h-[80%] flex gap-10">
-              <div
-                class="w-2/5 rounded-lg overflow-hidden shadow-md shadow-black/25 hover:shadow-lg duration-500 ease-in-out hidden md:flex"
-              >
-                <img
-                  src="/img/calculator.jpg"
-                  alt="Calculator"
-                  class="w-full h-full object-cover slide-left"
-                />
-              </div>
-              <div class="md:w-3/5 w-auto">
-                <div class="h-4/5 w-full slide-right">
-                  <a
-                    href="#"
-                    class="text-2xl font-bold text-black hover:text-blue-600 duration-200 ease-in-out mb-2.5 slide-right"
-                  >
-                    Calculator
-                    <i
-                      class="fi fi-bs-arrow-up-right text-sm animate-pulse"
-                    ></i>
-                  </a>
-                  <p class="text-black opacity-75 slide-right mt-5">
-                    A basic calculator web application that performs essential
-                    arithmetic operations such as addition, subtraction,
-                    multiplication, and division.
-                  </p>
-                </div>
-                <div class="w-full h-1/5 flex items-center gap-2.5">
-                  <a
-                    href="#"
-                    class="bg-purple-500 p-1.5 rounded-full hover:-translate-y-1.5 duration-300 ease-in-out slide-up"
-                    >ReactJs</a
-                  >
-                  <a
-                    href="#"
-                    class="bg-purple-500 p-1.5 rounded-full hover:-translate-y-1.5 duration-300 ease-in-out slide-up"
-                    >Tailwind</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="md:w-2xl w-4/5 h-80 rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-black/25 dark overflow-hidden"
-          >
-            <div class="w-[90%] h-[80%] flex gap-10">
-              <div
-                class="w-2/5 rounded-lg overflow-hidden shadow-md shadow-black/25 hover:shadow-lg duration-500 ease-in-out hidden md:flex"
-              >
-                <img
-                  src="/img/tictactoe.jpg"
-                  alt="Tic Tac Toe"
-                  class="w-full h-full object-cover slide-left"
-                />
-              </div>
-              <div class="md:w-3/5 w-auto">
-                <div class="h-4/5 w-full">
-                  <a
-                    href="#"
-                    class="text-2xl font-bold text-black mb-2.5 slide-right hover:text-blue-600 duration-200 ease-in-out"
-                  >
-                    Tic Tac Toe
-                    <i
-                      class="fi fi-bs-arrow-up-right text-sm animate-pulse"
-                    ></i>
-                  </a>
-                  <p class="text-black opacity-75 slide-right mt-5">
-                    A classic Tic Tac Toe game built as a web application that
-                    allows two players to take turns and compete in a simple,
-                    interactive game environment.
-                  </p>
-                </div>
-                <div class="w-full h-1/5 flex items-center gap-2.5">
-                  <a
-                    href="#"
-                    class="bg-purple-500 p-1.5 rounded-full hover:-translate-y-1.5 duration-300 ease-in-out slide-up"
-                    >ReactJs</a
-                  >
-                  <a
-                    href="#"
-                    class="bg-purple-500 p-1.5 rounded-full hover:-translate-y-1.5 duration-300 ease-in-out slide-up"
-                    >Tailwind</a
-                  >
-                  <a
-                    href="#"
-                    class="bg-purple-500 p-1.5 rounded-full hover:-translate-y-1.5 duration-300 ease-in-out slide-up"
-                    >JavaScript</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- skill -->
-      <section id="skills" class="">
-        <div class="text-center mb-10 mt-40">
-          <h2 class="text-3xl font-bold">My Skills</h2>
-        </div>
-        <div class="w-auto h-auto flex flex-wrap justify-center gap-5 p-5">
-          <div
-            class="lg:w-44 w-28 lg:h-28 h-20 rounded-2xl flex-wrap flex items-center justify-center shadow-lg dark duration-500 ease-in-out overflow-hidden"
-          >
-            <div class="w-auto h-auto">
-              <div class="lg:size-16 size-7 flex items-center mx-auto group">
-                <img
-                  src="/img/icon/html.png"
-                  alt="html logo"
-                  class="relative opacity-100 group-hover:opacity-0 duration-300 ease-in-out slide-left"
-                />
-                <p
-                  class="lg:text-4xl text-xl text-black absolute opacity-0 group-hover:opacity-100 duration-500 ease-in-out"
-                >
-                  90%
-                </p>
-              </div>
-              <div class="h-6 w-auto mx-auto text-center text-black text-lg">
-                <p class="slide-up">HTML</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="lg:w-44 w-28 lg:h-28 h-20 rounded-2xl flex-wrap flex items-center justify-center shadow-lg dark duration-500 ease-in-out overflow-hidden"
-          >
-            <div class="w-auto h-auto">
-              <div class="lg:size-16 size-7 flex items-center mx-auto group">
-                <img
-                  src="/img/icon/css.png"
-                  alt="css logo"
-                  class="relative opacity-100 group-hover:opacity-0 duration-300 ease-in-out slide-left"
-                />
-                <p
-                  class="lg:text-4xl text-xl text-black absolute opacity-0 group-hover:opacity-100 duration-500 ease-in-out"
-                >
-                  90%
-                </p>
-              </div>
-              <div class="h-6 w-auto mx-auto text-center text-black text-lg">
-                <p class="slide-up">CSS</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="lg:w-44 w-28 lg:h-28 h-20 rounded-2xl flex-wrap flex items-center justify-center shadow-lg dark duration-500 ease-in-out overflow-hidden"
-          >
-            <div class="w-auto h-auto">
-              <div class="lg:size-16 size-7 flex items-center mx-auto group">
-                <img
-                  src="/img/icon/javascript.png"
-                  alt="javascript logo"
-                  class="relative opacity-100 group-hover:opacity-0 duration-300 ease-in-out slide-left"
-                />
-                <p
-                  class="lg:text-4xl text-xl text-black absolute opacity-0 group-hover:opacity-100 duration-500 ease-in-out"
-                >
-                  80%
-                </p>
-              </div>
-              <div class="h-6 w-auto mx-auto text-center text-black text-lg">
-                <p class="slide-up">JavaScript</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="lg:w-44 w-28 lg:h-28 h-20 rounded-2xl flex-wrap flex items-center justify-center shadow-lg dark duration-500 ease-in-out overflow-hidden"
-          >
-            <div class="w-auto h-auto">
-              <div
-                class="lg:size-16 size-7 flex items-center justify-center mx-auto group"
-              >
-                <img
-                  src="/img/icon/bootstap.png"
-                  alt="bootstrap logo"
-                  class="relative opacity-100 group-hover:opacity-0 duration-300 ease-in-out slide-left"
-                />
-                <p
-                  class="lg:text-4xl text-xl text-black absolute opacity-0 group-hover:opacity-100 duration-500 ease-in-out"
-                >
-                  90%
-                </p>
-              </div>
-              <div class="h-6 w-auto mx-auto text-center text-black text-lg">
-                <p class="slide-up">Bootstrap</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="lg:w-44 w-28 lg:h-28 h-20 rounded-2xl flex-wrap flex items-center justify-center shadow-lg dark duration-500 ease-in-out overflow-hidden"
-          >
-            <div class="w-auto h-auto">
-              <div class="lg:size-16 size-7 flex items-center mx-auto group">
-                <img
-                  src="/img/icon/tailwind.png"
-                  alt="tailwind logo"
-                  class="relative opacity-100 group-hover:opacity-0 duration-300 ease-in-out slide-left"
-                />
-                <p
-                  class="lg:text-4xl text-xl text-black absolute opacity-0 group-hover:opacity-100 duration-500 ease-in-out"
-                >
-                  80%
-                </p>
-              </div>
-              <div class="h-6 w-auto mx-auto text-center text-black text-lg">
-                <p class="slide-up">Tailwind</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Experience -->
-      <section id="exp" class="">
-        <div class="max-w-5xl mx-auto px-6 md:w-xl w-auto">
-          <!-- Title -->
-          <div class="text-center mb-14 mt-40">
-            <h2 class="text-3xl md:text-4xl font-bold">My Experience</h2>
-            <p class="text-gray-500 mt-3">
-              Practical experience and skills I’ve developed along my journey
+              Engineered a lightweight, pure backend system capable of handling
+              complex school processes seamlessly. Built to operate
+              independently from the frontend, ensuring database security and
+              handling dynamic workloads with precise execution.
             </p>
           </div>
 
-          <!-- Timeline -->
-          <div class="relative border-l-2 border-gray-200 space-y-12">
-            <!-- Experience 1 -->
-            <div class="ml-6 relative">
+          <div class="space-y-4">
+            <div class="flex flex-wrap gap-2">
               <span
-                class="absolute -left-8.25 top-1 w-4 h-4 bg-purple-600 rounded-full slide-left"
+                class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400"
+                >Laravel</span
+              >
+              <span
+                class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400"
+                >MongoDB</span
+              >
+              <span
+                class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400"
+                >Cloudinary</span
+              >
+              <span
+                class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400"
+                >Postman</span
+              >
+            </div>
+
+            <div
+              class="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400"
+            >
+              <span
+                ><i class="fa-regular fa-calendar mr-1.5 text-brand-500"></i>
+                Completed Apr 2026</span
+              >
+              <span
+                ><i class="fa-solid fa-gears mr-1.5 text-brand-500"></i>
+                Back-End Architecture</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-slate-950 p-8 md:col-span-5 flex flex-col justify-center font-mono text-xs text-slate-400 border-t md:border-t-0 md:border-l border-slate-200 dark:border-slate-800"
+        >
+          <div class="space-y-2 select-none">
+            <p class="text-emerald-400">// API Middleware Security Layer</p>
+            <p>
+              <span class="text-purple-400">Route::</span>prefix(<span
+                class="text-amber-300"
+                >'v1'</span
+              >)->group(function () {
+            </p>
+            <p class="pl-4">
+              <span class="text-purple-400">Route::</span>apiResource(<span
+                class="text-amber-300"
+                >'courses'</span
+              >, CourseController::class);
+            </p>
+            <p class="pl-4">
+              <span class="text-purple-400">Route::</span>post(<span
+                class="text-amber-300"
+                >'students/enroll'</span
+              >, [EnrollController::class,
+              <span class="text-amber-300">'store'</span>]);
+            </p>
+            <p>});</p>
+            <br />
+            <p class="text-slate-500">HTTP/1.1 201 Created</p>
+            <p class="text-slate-50">{</p>
+            <p class="pl-4">
+              <span class="text-blue-400">"status"</span>:
+              <span class="text-amber-300">"success"</span>,
+            </p>
+            <p class="pl-4">
+              <span class="text-blue-400">"payload"</span>: {
+              <span class="text-slate-600">"id"</span>: 2929 }
+            </p>
+            <p class="text-slate-50">}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="experience"
+      class="bg-slate-100 dark:bg-slate-900/30 border-t border-slate-200 dark:border-slate-800 py-16 transition-colors duration-300"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12"
+      >
+        <div>
+          <h2
+            class="text-xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-briefcase text-brand-500"></i> Work History
+          </h2>
+          <div
+            class="space-y-8 border-l-2 border-slate-200 dark:border-slate-800 pl-5 relative"
+          >
+            <div class="relative">
+              <span
+                class="absolute -left-[27px] top-1.5 bg-brand-500 w-3 h-3 rounded-full ring-4 ring-slate-100 dark:ring-slate-950"
               ></span>
-              <h3 class="text-xl font-semibold slide-right">
-                Front-End Web Developer (Student)
-              </h3>
-              <p class="text-sm text-gray-500 slide-right">2025 – Present</p>
-              <p class="mt-3 text-gray-600 leading-relaxed slide-right">
-                Focused on building responsive and user-friendly websites using
-                modern front-end technologies. Experienced in creating layouts,
-                styling components, and improving UI/UX.
+              <span
+                class="text-xs font-semibold text-slate-400 dark:text-slate-500 block"
+                >2024 — 2026</span
+              >
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Associate
+              </h4>
+              <p
+                class="text-sm text-brand-600 dark:text-brand-400 font-medium mb-1"
+              >
+                Digital Divide Data (DDD)
               </p>
             </div>
 
-            <!-- Experience 2 -->
-            <div class="ml-6 relative">
+            <div class="relative">
               <span
-                class="absolute -left-8.25 top-1 w-4 h-4 bg-purple-600 rounded-full slide-left"
+                class="absolute -left-[27px] top-1.5 bg-slate-300 dark:bg-slate-700 w-3 h-3 rounded-full ring-4 ring-slate-100 dark:ring-slate-950"
               ></span>
-              <h3 class="text-xl font-semibold slide-right">
-                IT & Computer Science Student
-              </h3>
-              <p class="text-sm text-gray-500 slide-right">
+              <span
+                class="text-xs font-semibold text-slate-400 dark:text-slate-500 block"
+                >May 2024 (1 month)</span
+              >
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Associate Intern
+              </h4>
+              <p
+                class="text-sm text-brand-600 dark:text-brand-400 font-medium mb-1"
+              >
+                Digital Divide Data (DDD)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2
+            class="text-xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-graduation-cap text-brand-500"></i> Academic &
+            Certifications
+          </h2>
+          <div
+            class="space-y-8 border-l-2 border-slate-200 dark:border-slate-800 pl-5 relative"
+          >
+            <div class="relative">
+              <span
+                class="absolute -left-[27px] top-1.5 bg-brand-500 w-3 h-3 rounded-full ring-4 ring-slate-100 dark:ring-slate-950"
+              ></span>
+              <span
+                class="text-xs font-semibold text-slate-400 dark:text-slate-500 block"
+                >2024 — Present</span
+              >
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Major: Computer Science
+              </h4>
+              <p
+                class="text-sm text-brand-600 dark:text-brand-400 font-medium mb-1"
+              >
                 Royal University of Phnom Penh
               </p>
-              <p class="mt-3 text-gray-600 leading-relaxed slide-right">
-                Studying computer science with strong fundamentals in
-                programming, problem-solving, and system concepts. Continuously
-                improving both technical and design skills.
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                Focusing heavily on data structures, algorithmic design, and
+                enterprise network setups.
+              </p>
+            </div>
+
+            <div class="relative">
+              <span
+                class="absolute -left-[27px] top-1.5 bg-slate-300 dark:bg-slate-700 w-3 h-3 rounded-full ring-4 ring-slate-100 dark:ring-slate-950"
+              ></span>
+              <span
+                class="text-xs font-semibold text-slate-400 dark:text-slate-500 block"
+                >April 2026</span
+              >
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Web Development Backend (Laravel)
+              </h4>
+              <p
+                class="text-sm text-brand-600 dark:text-brand-400 font-medium mb-1"
+              >
+                ICT Professional Training Center
+              </p>
+            </div>
+
+            <div class="relative">
+              <span
+                class="absolute -left-[27px] top-1.5 bg-slate-300 dark:bg-slate-700 w-3 h-3 rounded-full ring-4 ring-slate-100 dark:ring-slate-950"
+              ></span>
+              <span
+                class="text-xs font-semibold text-slate-400 dark:text-slate-500 block"
+                >Feb 2024 — May 2024</span
+              >
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                B.E.S.T. Program
+              </h4>
+              <p
+                class="text-sm text-brand-600 dark:text-brand-400 font-medium mb-1"
+              >
+                Digital Divide Data
               </p>
             </div>
           </div>
         </div>
-      </section>
-      <!-- contact -->
-      <section id="contact" class="mb-20 slide-up">
-        <div class="text-center mb-12 mt-40">
-          <h2 class="text-3xl font-bold">My Contact</h2>
-          <p class="text-body mt-2">Feel free to send me a message</p>
+      </div>
+    </section>
+
+    <footer
+      class="bg-slate-950 text-slate-500 py-12 text-center text-sm border-t border-slate-900"
+    >
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        <p class="font-medium text-slate-300">PHORN SOKLEAP</p>
+        <div class="flex justify-center space-x-6 text-lg">
+          <a
+            href="https://github.com/sokleapphorn2929"
+            target="_blank"
+            class="hover:text-white transition duration-200"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/sokleap-phorn"
+            target="_blank"
+            class="hover:text-white transition duration-200"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a
+            href="mailto:phsokleap2929@gmail.com"
+            class="hover:text-white transition duration-200"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
         </div>
-
-        <div class="flex justify-center px-4">
-          <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg dark">
-            <form>
-              <!-- Email -->
-              <label
-                for="mail"
-                class="block mb-2 text-sm font-medium text-heading"
-              >
-                Your Email
-              </label>
-
-              <div class="relative mb-6">
-                <div
-                  class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
-                >
-                  <svg
-                    class="w-4 h-4 text-body"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
-                    />
-                  </svg>
-                </div>
-
-                <input
-                  type="email"
-                  id="mail"
-                  placeholder="your@email.com"
-                  class="w-full ps-9 py-2.5 text-sm text-heading bg-neutral-secondary-medium border border-black/40 rounded-xl outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
-                />
-              </div>
-
-              <!-- Message -->
-              <label
-                for="message"
-                class="block mb-2 text-sm font-medium text-heading"
-              >
-                Your Message
-              </label>
-
-              <textarea
-                id="message"
-                rows="6"
-                placeholder="Write your message here..."
-                class="w-full p-3 text-sm text-heading bg-neutral-secondary-medium border border-black/40 rounded-xl resize-none outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
-              ></textarea>
-
-              <!-- Button -->
-              <button
-                type="submit"
-                class="w-full mt-6 text-white bg-linear-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-linear-to-br focus:ring-4 focus:ring-purple-300 shadow-md shadow-purple-500/40 font-medium rounded-xl text-sm py-3 transition-transform duration-300 hover:-translate-y-1"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-      <!-- footer -->
-
-      <footer class="w-full md:pb-5 pb-10">
-        <div
-          class="w-[25%] h-0.5 bg-purple-600/50 md:mb-5 mb-10 flex justify-center mx-auto rounded-full drop-shadow-md drop-shadow-purple-600"
-        ></div>
-        <p class="text-center">
-          © 2026
-          <a href="#">Phorn Sokleap.</a>
-          All Rights Reserved.
+        <p class="text-[11px] text-slate-600 tracking-wider">
+          ©Phorn Sokleap - 2026
         </p>
-        <p class="text-sm text-body text-center">
-          Built with
-          <span class="font-medium text-heading">HTML</span>,
-          <span class="font-medium text-heading">JavaScript</span> &
-          <span class="font-medium text-heading">Tailwind CSS</span>
-        </p>
-      </footer>
-    </main>
-    <script src="/src/script.js"></script>
+      </div>
+    </footer>
+
+    <script>
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon",
+      );
+      const themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon",
+      );
+
+      // Check explicit local storage or system preference definitions
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        themeToggleLightIcon.classList.remove("hidden");
+      } else {
+        document.documentElement.classList.remove("dark");
+        themeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      // Toggle action event sequence
+      themeToggleBtn.addEventListener("click", function () {
+        themeToggleDarkIcon.classList.toggle("hidden");
+        themeToggleLightIcon.classList.toggle("hidden");
+
+        if (localStorage.getItem("color-theme")) {
+          if (localStorage.getItem("color-theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          }
+        } else {
+          if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          }
+        }
+      });
+    </script>
   </body>
 </html>
