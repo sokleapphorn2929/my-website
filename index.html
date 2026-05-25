@@ -30,18 +30,40 @@
               },
             },
             animation: {
-              float: 'float 3s ease-in-out infinite',
+              float: "float 3s ease-in-out infinite",
             },
             keyframes: {
               float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-8px)' }, // Moves gently up 8px
-              }
-            }
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-8px)" }, // Moves gently up 8px
+              },
+            },
           },
         },
       };
     </script>
+
+    <style>
+      @keyframes marquee-x {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .animate-marquee-smooth {
+        animation: marquee-x 30s linear infinite;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .animate-marquee-smooth {
+          animation-duration: 1ms;
+          animation-iteration-count: 1;
+        }
+      }
+    </style>
   </head>
   <body
     class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300"
@@ -108,9 +130,11 @@
               class="flex sm:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:ring-2 hover:ring-slate-200 dark:hover:ring-slate-800 transition-all focus:outline-none"
               aria-label="Toggle Menu"
             >
-              <i id="menu-icon" class="fa-solid fa-bars text-sm transition-transform duration-200"></i>
+              <i
+                id="menu-icon"
+                class="fa-solid fa-bars text-sm transition-transform duration-200"
+              ></i>
             </button>
-
           </div>
         </div>
       </div>
@@ -118,12 +142,34 @@
         id="mobile-menu"
         class="sm:hidden max-h-0 opacity-0 overflow-hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 transition-all duration-300 ease-in-out"
       >
-        <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col font-medium text-sm text-slate-600 dark:text-slate-300">
-          <a href="#about" class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition">About</a>
-          <a href="#skills" class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition">Skills</a>
-          <a href="#projects" class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition">Projects</a>
-          <a href="#experience" class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition">Experience</a>
-          <a href="#certificates" class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition">Certificates</a>
+        <div
+          class="px-4 pt-2 pb-4 space-y-1 flex flex-col font-medium text-sm text-slate-600 dark:text-slate-300"
+        >
+          <a
+            href="#about"
+            class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition"
+            >Projects</a
+          >
+          <a
+            href="#experience"
+            class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition"
+            >Experience</a
+          >
+          <a
+            href="#certificates"
+            class="mobile-link px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-brand-500 transition"
+            >Certificates</a
+          >
         </div>
       </div>
     </nav>
@@ -226,20 +272,25 @@
         </div>
 
         <div class="relative flex-shrink-0">
-          
-          <div class="w-48 h-56 sm:w-64 sm:h-80 rounded-3xl overflow-hidden shadow-xl border-4 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-800 transition duration-300">
-            <div class="w-full h-full bg-slate-100 dark:bg-slate-950 flex items-center justify-center">
-              <img 
-                src="./img/1711898372036.jpg" 
-                alt="Phorn Sokleap" 
-                class="w-full h-full object-cover" 
+          <div
+            class="w-48 h-56 sm:w-64 sm:h-80 rounded-3xl overflow-hidden shadow-xl border-4 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-800 transition duration-300"
+          >
+            <div
+              class="w-full h-full bg-slate-100 dark:bg-slate-950 flex items-center justify-center"
+            >
+              <img
+                src="./img/1711898372036.jpg"
+                alt="Phorn Sokleap"
+                class="w-full h-full object-cover"
               />
             </div>
           </div>
 
-          <div class="absolute -bottom-4 -right-2 sm:-bottom-5 sm:-right-3 animate-float">
+          <div
+            class="absolute -bottom-4 -right-2 sm:-bottom-5 sm:-right-3 animate-bounce"
+          >
             <a
-              href="/file/curriculum vitae (Phorn Sokleap).pdf" 
+              href="/file/curriculum vitae (Phorn Sokleap).pdf"
               download="Sokleap_Phorn_CV.pdf"
               class="inline-flex items-center gap-2.5 px-5 py-3 bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 text-white text-xs font-bold rounded-2xl shadow-xl transition-all duration-300"
             >
@@ -247,7 +298,6 @@
               <span>Download CV</span>
             </a>
           </div>
-
         </div>
       </div>
     </header>
@@ -358,6 +408,156 @@
             </div>
           </div>
         </div>
+        <!-- skill scroll style -->
+        <div
+          class="relative overflow-hidden border-y border-slate-200 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-900/20 before:pointer-events-none before:absolute before:inset-y-0 before:start-0 before:z-10 before:w-16 before:bg-[linear-gradient(to_right,white,transparent)] dark:before:bg-[linear-gradient(to_right,rgba(15,23,42,1),transparent)] after:pointer-events-none after:absolute after:inset-y-0 after:end-0 after:z-10 after:w-16 after:bg-[linear-gradient(to_left,white,transparent)] dark:after:bg-[linear-gradient(to_left,rgba(15,23,42,1),transparent)] mt-6 md:mt-8"
+        >
+          <div class="flex min-w-full shrink-0 overflow-hidden">
+            <div
+              class="animate-marquee-smooth hover:[animation-play-state:paused] flex min-w-full shrink-0 justify-around items-center gap-12 py-3.5 px-6"
+            >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-laravel text-[#FF2D20] text-base"></i>
+                Laravel</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-php text-[#777BB4] text-base"></i>
+                PHP</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-solid fa-database text-[#00758F] text-base"></i>
+                MySQL</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-js text-[#F7DF1E] text-base"></i>
+                JavaScript</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-html5 text-[#E34F26] text-base"></i>
+                HTML5</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-css3-alt text-[#1572B6] text-base"></i>
+                CSS3</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-java text-[#007396] text-base"></i>
+                Java</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-solid fa-code text-[#00599C] text-base"></i> C /
+                C++</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-solid fa-cloud text-[#3448C5] text-base"></i>
+                Cloudinary</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i
+                  class="fa-solid fa-paper-plane text-[#FF6C37] text-base"
+                ></i>
+                Postman API</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+              >
+                <svg
+                  class="w-4 h-4 text-[#116149] fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 0c-.54 0-1.07.03-1.6.09v.03a11.94 11.94 0 00-6.17 3.52 12.3 12.3 0 00-3.3 5.43c-.76 2.5-.54 5.31.62 7.64a12.1 12.1 0 004.81 5.17l.08.04A30.63 30.63 0 0012 24c2.2 0 4-.54 5.56-1.08l.08-.04a12.1 12.1 0 004.81-5.17c1.16-2.33 1.38-5.14.62-7.64a12.3 12.3 0 00-3.3-5.43A11.94 11.94 0 0013.6.12V.1C13.07.03 12.54 0 12 0zm.66 2.45c1.64.6 3.1 1.73 4.14 3.23 1.25 1.83 1.72 4.15 1.3 6.35-.38 2.02-1.44 3.9-2.98 5.27-.47.41-.9.64-1.35.84l-.1.04-.15.06c-.28.1-.58.2-.86.32v-16.11zm-1.32 0v16.11c-.28-.11-.58-.2-.86-.32l-.15-.06-.1-.04c-.45-.2-.88-.43-1.35-.84-1.54-1.38-2.6-3.25-2.98-5.27-.42-2.2.05-4.52 1.3-6.35 1.04-1.5 2.5-2.63 4.14-3.23z"
+                  />
+                </svg>
+                MongoDB
+              </span>
+            </div>
+
+            <div
+              class="animate-marquee-smooth hover:[animation-play-state:paused] flex min-w-full shrink-0 justify-around items-center gap-12 py-3.5 px-6"
+              aria-hidden="true"
+            >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-laravel text-[#FF2D20] text-base"></i>
+                Laravel</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-php text-[#777BB4] text-base"></i>
+                PHP</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-solid fa-database text-[#00758F] text-base"></i>
+                MySQL</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-js text-[#F7DF1E] text-base"></i>
+                JavaScript</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-html5 text-[#E34F26] text-base"></i>
+                HTML5</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-css3-alt text-[#1572B6] text-base"></i>
+                CSS3</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-brands fa-java text-[#007396] text-base"></i>
+                Java</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-solid fa-code text-[#00599C] text-base"></i> C /
+                C++</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i class="fa-solid fa-cloud text-[#3448C5] text-base"></i>
+                Cloudinary</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+                ><i
+                  class="fa-solid fa-paper-plane text-[#FF6C37] text-base"
+                ></i>
+                Postman API</span
+              >
+              <span
+                class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-400"
+              >
+                <svg
+                  class="w-4 h-4 text-[#116149] fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 0c-.54 0-1.07.03-1.6.09v.03a11.94 11.94 0 00-6.17 3.52 12.3 12.3 0 00-3.3 5.43c-.76 2.5-.54 5.31.62 7.64a12.1 12.1 0 004.81 5.17l.08.04A30.63 30.63 0 0012 24c2.2 0 4-.54 5.56-1.08l.08-.04a12.1 12.1 0 004.81-5.17c1.16-2.33 1.38-5.14.62-7.64a12.3 12.3 0 00-3.3-5.43A11.94 11.94 0 0013.6.12V.1C13.07.03 12.54 0 12 0zm.66 2.45c1.64.6 3.1 1.73 4.14 3.23 1.25 1.83 1.72 4.15 1.3 6.35-.38 2.02-1.44 3.9-2.98 5.27-.47.41-.9.64-1.35.84l-.1.04-.15.06c-.28.1-.58.2-.86.32v-16.11zm-1.32 0v16.11c-.28-.11-.58-.2-.86-.32l-.15-.06-.1-.04c-.45-.2-.88-.43-1.35-.84-1.54-1.38-2.6-3.25-2.98-5.27-.42-2.2.05-4.52 1.3-6.35 1.04-1.5 2.5-2.63 4.14-3.23z"
+                  />
+                </svg>
+                MongoDB
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- End Text ticker -->
       </div>
     </section>
 
@@ -806,19 +1006,26 @@
         const isOpen = mobileMenu.classList.contains("max-h-64");
 
         if (isOpen) {
-          mobileMenu.classList.remove("max-h-64", "opacity-100", "pt-2", "pb-4");
+          mobileMenu.classList.remove(
+            "max-h-64",
+            "opacity-100",
+            "pt-2",
+            "pb-4",
+          );
           mobileMenu.classList.add("max-h-0", "opacity-0");
-          menuIcon.className = "fa-solid fa-bars text-sm transition-transform duration-200";
+          menuIcon.className =
+            "fa-solid fa-bars text-sm transition-transform duration-200";
         } else {
           mobileMenu.classList.remove("max-h-0", "opacity-0");
           mobileMenu.classList.add("max-h-64", "opacity-100");
-          menuIcon.className = "fa-solid fa-xmark text-sm transition-transform duration-200 rotate-90";
+          menuIcon.className =
+            "fa-solid fa-xmark text-sm transition-transform duration-200 rotate-90";
         }
       }
 
       menuToggle.addEventListener("click", toggleMenu);
 
-      mobileLinks.forEach(link => {
+      mobileLinks.forEach((link) => {
         link.addEventListener("click", () => {
           if (mobileMenu.classList.contains("max-h-64")) {
             toggleMenu();
