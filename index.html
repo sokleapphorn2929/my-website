@@ -35,7 +35,7 @@
             keyframes: {
               float: {
                 "0%, 100%": { transform: "translateY(0)" },
-                "50%": { transform: "translateY(-8px)" }, // Moves gently up 8px
+                "50%": { transform: "translateY(-8px)" },
               },
             },
           },
@@ -63,11 +63,146 @@
           animation-iteration-count: 1;
         }
       }
+
+      @keyframes ambient-drift-one {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+        }
+        33% {
+          transform: translateY(-35px) translateX(20px) scale(1.05) rotate(8deg);
+        }
+        66% {
+          transform: translateY(-15px) translateX(-15px) scale(0.95)
+            rotate(-4deg);
+        }
+      }
+
+      @keyframes ambient-drift-two {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0) scale(0.9) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-50px) translateX(-30px) scale(1.1)
+            rotate(-12deg);
+        }
+      }
+
+      @keyframes ambient-drift-three {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+        }
+        40% {
+          transform: translateY(-20px) translateX(35px) scale(0.9) rotate(15deg);
+        }
+        75% {
+          transform: translateY(-45px) translateX(10px) scale(1.05) rotate(5deg);
+        }
+      }
+
+      @keyframes ambient-drift-four {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0) scale(1.1) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-30px) translateX(25px) scale(0.85)
+            rotate(-8deg);
+        }
+      }
+
+      /* Utility classes for separate execution speeds */
+      .animate-drift-1 {
+        animation: ambient-drift-one 22s ease-in-out infinite;
+      }
+      .animate-drift-2 {
+        animation: ambient-drift-two 28s ease-in-out infinite;
+      }
+      .animate-drift-3 {
+        animation: ambient-drift-three 25s ease-in-out infinite;
+      }
+      .animate-drift-4 {
+        animation: ambient-drift-four 32s ease-in-out infinite;
+      }
     </style>
   </head>
   <body
     class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300"
   >
+    <div
+      class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none select-none opacity-[0.25] dark:opacity-[0.25]"
+    >
+      <div
+        class="absolute top-[8%] left-[12%] text-xl text-slate-400 dark:text-slate-600 animate-drift-4"
+      >
+        <i class="fa-solid fa-code"></i>
+      </div>
+      <div
+        class="absolute top-[40%] right-[15%] text-lg text-slate-400 dark:text-slate-600 animate-drift-2"
+      >
+        <i class="fa-solid fa-database"></i>
+      </div>
+      <div
+        class="absolute bottom-[35%] left-[6%] text-xl text-slate-400 dark:text-slate-600 animate-drift-3"
+      >
+        ⚡
+      </div>
+      <div
+        class="absolute bottom-[8%] right-[20%] text-lg text-slate-400 dark:text-slate-600 animate-drift-1"
+      >
+        💻
+      </div>
+
+      <div
+        class="absolute top-[15%] left-[6%] text-5xl text-red-500/70 dark:text-red-400/50 animate-drift-1"
+      >
+        <i class="fa-brands fa-laravel"></i>
+      </div>
+
+      <div
+        class="absolute top-[12%] right-[8%] text-6xl text-indigo-500/70 dark:text-indigo-400/50 animate-drift-3"
+      >
+        <i class="fa-brands fa-php"></i>
+      </div>
+
+      <div
+        class="absolute top-[48%] left-[8%] text-4xl text-amber-500/70 dark:text-amber-400/60 animate-drift-2"
+      >
+        <i class="fa-brands fa-js"></i>
+      </div>
+
+      <div
+        class="absolute bottom-[22%] left-[14%] text-5xl text-emerald-500/70 dark:text-emerald-400/50 animate-drift-4"
+      >
+        <i class="fa-solid fa-database"></i>
+      </div>
+
+      <div
+        class="absolute bottom-[28%] right-[10%] text-4xl text-orange-500/70 dark:text-orange-400/50 animate-drift-2"
+      >
+        <i class="fa-brands fa-html5"></i>
+      </div>
+      <div
+        class="absolute bottom-[12%] right-[28%] text-4xl text-blue-500/70 dark:text-blue-400/50 animate-drift-3"
+      >
+        <i class="fa-brands fa-css3-alt"></i>
+      </div>
+
+      <div class="absolute top-[28%] left-[24%] text-2xl animate-drift-3">
+        🚀
+      </div>
+      <div class="absolute top-[32%] right-[26%] text-3xl animate-drift-1">
+        🔥
+      </div>
+      <div class="absolute bottom-[48%] right-[6%] text-2xl animate-drift-4">
+        ⚡
+      </div>
+      <div class="absolute bottom-[14%] left-[25%] text-2xl animate-drift-2">
+        🛠️
+      </div>
+    </div>
     <nav
       class="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300"
     >
